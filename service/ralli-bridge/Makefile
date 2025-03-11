@@ -16,7 +16,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=ralli-bridge
 PKG_RELEASE:=1
-PKG_SOURCE_URL:=git@github.com:cungdd/connectedhomeip.git
+PKG_SOURCE_URL:=https://github.com/cungdd/connectedhomeip.git
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_MIRROR:=0 # don't try OpenWrt mirror
 PKG_SOURCE_SUBMODULES:=\
