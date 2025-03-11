@@ -1,7 +1,7 @@
 # Copyright (c) 2023-2024 Project CHIP Authors
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
-# You may not use this file except in compliance with the License.
+# you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
 # http://www.apache.org/licenses/LICENSE-2.0
@@ -16,9 +16,8 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=matter-netman
 PKG_RELEASE:=1
-PKG_SOURCE_URL:=https://github.com/cungdd/connectedhomeip.git
+PKG_SOURCE_URL:=git@github.com:cungdd/connectedhomeip.git
 PKG_SOURCE_PROTO:=git
-PKG_SOURCE_BRANCH:=v1.4-branch
 PKG_SOURCE_MIRROR:=0 # don't try OpenWrt mirror
 PKG_SOURCE_SUBMODULES:=\
   third_party/pigweed/repo \
@@ -27,10 +26,9 @@ PKG_SOURCE_SUBMODULES:=\
   third_party/nlio/repo
 
 # Hash can be regenerated with make package/matter-netman/check FIXUP=1
-PKG_SOURCE_DATE:=2024-08-28
-PKG_SOURCE_VERSION:=9d596a003d7a178dd160e12b6a4e50b54d864e5c
-# PKG_MIRROR_HASH:=f2a46a2d3cc9486c3b4669300e13af9cb1962c75cf7955dd2a682315d8194b7b
-PKG_MIRROR_HASH:=a054dce80057cce0173458b000c104bf94be90046e3de7dc39c7f0f309713aac
+PKG_SOURCE_DATE:=2025-03-10
+PKG_SOURCE_VERSION:=e2b33bc6c639d62312f174fdabcf0bb93dbc9d28
+PKG_MIRROR_HASH:=8c63ae43da21d2a9ef7ade220749af7fdc498e0bf0381189a3cf71843026428e
 
 # Use local source dir for development
 # USE_SOURCE_DIR:=$(HOME)/workspace/connectedhomeip
@@ -48,8 +46,8 @@ define Package/matter-netman
   SECTION:=net
   CATEGORY:=Network
   TITLE:=Matter Network Infrastructure Manager Daemon
-  URL:=https://github.com/cungdd/connectedhomeip
-  DEPENDS:=+libstdcpp +libatomic +libopenssl
+  URL:=https://github.com/project-chip/connectedhomeip
+  DEPENDS:=+libstdcpp +libatomic +libopenssl +jsoncpp +libmosquittopp
   USERID:=matter=5540:matter=5540
 endef
 
@@ -72,7 +70,7 @@ define Build/Configure
 	mkdir -p $(OUT_DIR) && cd $(OUT_DIR) && \
 		$(CONFIGURE_VARS) $(PKG_BUILD_DIR)/scripts/configure \
 			--build-env-dir="$(CHIP_BUILD_ENV_DIR)" \
-			--project=examples/network-manager-app/linux \
+			--project=examples/bridge-app/linux \
 			--target=$(GNU_TARGET_NAME) \
 			--logging-backend=syslog \
 			--enable-access-restrictions=no \
