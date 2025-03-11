@@ -28,7 +28,7 @@ PKG_SOURCE_SUBMODULES:=\
 # Hash can be regenerated with make package/ralli-bridge/check FIXUP=1
 PKG_SOURCE_DATE:=2025-03-10
 PKG_SOURCE_VERSION:=e2b33bc6c639d62312f174fdabcf0bb93dbc9d28
-PKG_MIRROR_HASH:=8c63ae43da21d2a9ef7ade220749af7fdc498e0bf0381189a3cf71843026428e
+PKG_MIRROR_HASH:=a8ee6e4feef36152de8eccfbf43d2fc9e5cd491db8f1560758334982b4f2fbee
 
 # Use local source dir for development
 # USE_SOURCE_DIR:=$(HOME)/workspace/connectedhomeip
