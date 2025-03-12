@@ -14,7 +14,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=matter-netman
+PKG_NAME:=ralli-bridge
 PKG_RELEASE:=1
 PKG_SOURCE_URL:=git@gitlab.com:r-ng-ng/matter/connectedhomeip.git
 PKG_SOURCE_PROTO:=git
@@ -25,7 +25,7 @@ PKG_SOURCE_SUBMODULES:=\
   third_party/nlassert/repo \
   third_party/nlio/repo
 
-# Hash can be regenerated with make package/matter-netman/check FIXUP=1
+# Hash can be regenerated with make package/ralli-bridge/check FIXUP=1
 PKG_SOURCE_DATE:=2025-03-12
 PKG_SOURCE_VERSION:=9dd9ea175aacfcad5025e7a7a786780d251317dd
 PKG_MIRROR_HASH:=0638f80cf87d809d7d452aa45f16bb6a93cd3c52261062e415306164487afbea
@@ -42,7 +42,7 @@ PKG_BUILD_DEPENDS:=gn/host
 include $(INCLUDE_DIR)/package.mk
 
 # Hard-code uid/gid due to https://github.com/openwrt/openwrt/issues/13927
-define Package/matter-netman
+define Package/ralli-bridge
   SECTION:=net
   CATEGORY:=Network
   TITLE:=Matter Network Infrastructure Manager Daemon
@@ -51,7 +51,7 @@ define Package/matter-netman
   USERID:=matter=5540:matter=5540
 endef
 
-define Package/matter-netman/description
+define Package/ralli-bridge/description
   Matter Network Infrastructure Manager Daemon
   Integrates a router / access point with the Matter IoT ecosystem.
 endef
@@ -96,10 +96,10 @@ define Build/Compile
 	$(NINJA) -C $(OUT_DIR) chip-bridge-app
 endef
 
-define Package/matter-netman/install
+define Package/ralli-bridge/install
 	$(INSTALL_DIR) $(1)/usr/sbin $(1)/etc/init.d
 	$(INSTALL_BIN) $(OUT_DIR)/chip-bridge-app $(1)/usr/sbin
 	$(INSTALL_BIN) ./files/matter.init $(1)/etc/init.d/matter
 endef
 
-$(eval $(call BuildPackage,matter-netman))
+$(eval $(call BuildPackage,ralli-bridge))
