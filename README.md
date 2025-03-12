@@ -17,7 +17,7 @@ Note that this repository is aimed primarily at Matter implementers and OpenWrt 
 Add the following line to `feeds.conf` (ensure the OpenWrt `packages` feed is also present; it's definition can be copied from `feeds.conf.default` if necessary):
 
 ```
-src-git --force matter https://github.com/cungdd/matter-openwrt.git
+src-git --force matter https://github.com/cungdd/ralli-bridge.git
 ```
 
 Run the following commands to fetch the feed and install it into the build:
