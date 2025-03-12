@@ -16,9 +16,10 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=ralli-bridge
 PKG_RELEASE:=1
-PKG_SOURCE_URL:=git@github.com:cungdd/connectedhomeip.git
+PKG_SOURCE_URL:=git@gitlab.com:r-ng-ng/matter/connectedhomeip.git
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_MIRROR:=0 # don't try OpenWrt mirror
+PKG_SOURCE_BRANCH:=V1.4
 PKG_SOURCE_SUBMODULES:=\
   third_party/pigweed/repo \
   third_party/jsoncpp/repo \
@@ -27,7 +28,7 @@ PKG_SOURCE_SUBMODULES:=\
 
 # Hash can be regenerated with make package/ralli-bridge/check FIXUP=1
 PKG_SOURCE_DATE:=2025-03-12
-PKG_SOURCE_VERSION:=f5936a5e89282d0d8145d3727a7ad84075e9343c
+PKG_SOURCE_VERSION:=4cc02cdc51522758a2848d5664a48c1ebd040842
 PKG_MIRROR_HASH:=1d362d52738defce21f1c66707650ced5fb29f47cd1466a70194ade4f185edd2
 
 # Use local source dir for development
@@ -46,7 +47,7 @@ define Package/ralli-bridge
   SECTION:=net
   CATEGORY:=Network
   TITLE:=Matter Network Infrastructure Manager Daemon
-  URL:=https://github.com/project-chip/connectedhomeip
+  URL:=https://gitlab.com/r-ng-ng/matter/connectedhomeip
   DEPENDS:=+libstdcpp +libatomic +libopenssl +jsoncpp +libmosquittopp
   USERID:=matter=5540:matter=5540
 endef
