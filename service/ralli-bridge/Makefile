@@ -26,7 +26,7 @@ PKG_SOURCE_SUBMODULES:=\
   third_party/nlio/repo
 
 # Hash can be regenerated with make package/ralli-bridge/check FIXUP=1
-PKG_SOURCE_DATE:=2025-03-13
+PKG_SOURCE_DATE:=2025-03-14
 # PKG_SOURCE_VERSION:=9dd9ea175aacfcad5025e7a7a786780d251317dd
 # PKG_MIRROR_HASH:=0638f80cf87d809d7d452aa45f16bb6a93cd3c52261062e415306164487afbea
 
