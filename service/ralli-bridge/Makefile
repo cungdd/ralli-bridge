@@ -32,7 +32,7 @@ PKG_SOURCE_SUBMODULES:=\
 # PKG_MIRROR_HASH:=dab0b318da56c4b8f9e503131de15f0ed29c751c4abd474a1c70a3abaaafd712
 
 PKG_SOURCE_DATE:=2025-05-13
-PKG_SOURCE_VERSION:=06d3d6435fcde60cced8fee83535b0110c2bc0b4
+PKG_SOURCE_VERSION:=1b4f5c54d3ed2c90a075dc4a5b7fdda63db1123c
 PKG_MIRROR_HASH:=dab0b318da56c4b8f9e503131de15f0ed29c751c4abd474a1c70a3abaaafd712
 
 # Use local source dir for development
@@ -91,7 +91,7 @@ endef
 TARGET_CFLAGS += -Wno-format-nonliteral
 
 TARGET_CFLAGS += \
-	-DCHIP_SYSLOG_IDENT=\"matter\" \
+	-DCHIP_SYSLOG_IDENT=\"matter\"
 	-DCHIP_CONFIG_KVS_PATH=\"/etc/matter/chip_kvs.ini\" \
 	-DFATCONFDIR=\"/etc/matter\" \
 	-DSYSCONFDIR=\"/etc/matter\" \
