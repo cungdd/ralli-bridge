@@ -91,7 +91,7 @@ endef
 TARGET_CFLAGS += -Wno-format-nonliteral
 
 TARGET_CFLAGS += \
-	-DCHIP_SYSLOG_IDENT=\"matter\"
+	-DCHIP_SYSLOG_IDENT=\"matter\" \
 	-DCHIP_CONFIG_KVS_PATH=\"/etc/matter/chip_kvs.ini\" \
 	-DFATCONFDIR=\"/etc/matter\" \
 	-DSYSCONFDIR=\"/etc/matter\" \
